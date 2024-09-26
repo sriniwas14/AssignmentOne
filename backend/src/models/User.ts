@@ -1,9 +1,9 @@
 import { DataTypes } from 'sequelize'
 import sequelize from './index'
 
-sequelize.define('users', {
+const User = sequelize.define('users', {
 	id: {
-		type: DataTypes.STRING,
+		type: DataTypes.INTEGER,
 		autoIncrement: true,
 		primaryKey: true
 	},
@@ -12,6 +12,10 @@ sequelize.define('users', {
 		allowNull: false
 	},
 	lastName: {
+		type: DataTypes.STRING,
+		allowNull: false
+	},
+	organization: {
 		type: DataTypes.STRING,
 		allowNull: false
 	},
@@ -27,3 +31,5 @@ sequelize.define('users', {
 		type: DataTypes.STRING
 	}
 })
+
+export default User
