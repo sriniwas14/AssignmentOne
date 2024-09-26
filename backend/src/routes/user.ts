@@ -1,9 +1,8 @@
 import { Router } from "express";
-import { SignUp, SignIn } from '../controllers/user';
+import { UpdateSettings } from "../controllers/user";
 
 const userRouter = Router();
 
-userRouter.post("/signup", SignUp)
-userRouter.post("/signin", SignIn)
+userRouter.post("/settings", UpdateSettings);
 
-export default userRouter
+export default userRouter;

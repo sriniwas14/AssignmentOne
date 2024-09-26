@@ -13,3 +13,15 @@ export const signInValidator = z.object({
 	password: z.string().min(6)
 })
 
+export const resetPasswordValidator = z.object({
+	email: z.string(),
+	password: z.string().min(6)
+})
+
+export const updateSettingsValidator = z.object({
+	firstName: z.string().optional(),
+	lastName: z.string().optional(),
+	email: z.string().optional(),
+}).refine(data => data.firstName || data.lastName || data.email, {
+	message: "no fields received"
+})
