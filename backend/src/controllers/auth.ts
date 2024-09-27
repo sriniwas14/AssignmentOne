@@ -37,6 +37,8 @@ async function signUp(req: AuthRequest, res: Response) {
 		userId: user.id.toString(),
 		firstName: user.firstName,
 		lastName: user.lastName,
+		email: user.email,
+		avatar: user.avatar,
 	});
 
 	res.send({ success: true, token });
@@ -75,6 +77,8 @@ async function signIn(req: AuthRequest, res: Response) {
 		userId: user.id.toString(),
 		firstName: user.firstName,
 		lastName: user.lastName,
+		email: user.email,
+		avatar: user.avatar,
 	});
 
 	res.send({ success: true, token });
